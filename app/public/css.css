@@ -1,0 +1,46 @@
+body {
+    background-image: url(https://thumbs.dreamstime.com/z/cute-funny-seamless-pattern-dogs-things-pets-retro-seamless-pattern-dog-icons-endless-texture-doggy-style-colors-55677216.jpg);
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.brand {
+    width: 70px;
+    height: 70px;
+    margin: 5px;
+}
+
+.main {
+    background-color: #eeeeee;
+    border: 2px solid #cf5a00;
+    padding: 10px 40px;
+    border-radius: 25px;
+}
+
+form {
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-weight: bold;
+    margin:0;
+    margin-bottom: 10px;
+    color: #777;
+}
+
+.select {
+    color: #DAA520;
+text-shadow: 2px 2px #777;
+    font-weight: 200px;
+}
+
+.btn2 {
+    width: 200px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.img1 {
+    margin-top: 90px;
+}
+
+

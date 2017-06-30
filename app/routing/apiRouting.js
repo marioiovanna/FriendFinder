@@ -1,21 +1,22 @@
 
-
-var friendsData = require("../data/friends.js");
+var dogs = require("../data/friends.js");
 
 module.exports = function (app) {
 
     app.get('/api/friends', function (req, res) {
-        res.json(friendsData)
+        return res.json(dogs);
     });
 
     app.post('/api/friends', function (req, res) {
-        if (friendsData.length < 5) {
-            friendsData.push(req.body);
-            res.json(true)
-        }
-        else {
-            friendsData.push(req.body);
-            res.json(false);
-        }
-    })
+        var newdogs = req.body;
+
+
+        dogs.push(newdogs);
+
+        res.json(dogs);
+    });
+
+    app.use(function(req, res){
+        res.sendFile(path.join(__dirname + '/../public/home.html'));
+    });
 };

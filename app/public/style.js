@@ -1,9 +1,7 @@
 
 $(document).ready( function () {
 
-    $('#btn').hide();
-
-    console.log('funciona');
+    console.log('Works');
 
     $('#save').on('click', function (e) {
         e.preventDefault();
@@ -14,16 +12,13 @@ $(document).ready( function () {
         console.log(name);
         console.log(picture);
 
-        $('#btn').show();
-        $('#save').hide();
-
         var newdogs = {
             name: name,
             picture: picture,
             scores: {}
         };
 
-        console.log(newdogs)
+        console.log(newdogs);
 
         $.post('/api/friends', newdogs, function (data) {
             if (data) {
@@ -35,7 +30,8 @@ $(document).ready( function () {
         });
     });
 
-    $("#submit").click(function submitBtn(err, data) {
+    $("#submit").click(function submitBtn() {
+        event.preventDefault();
 
         var q1 = $('input[name=optradio1]:checked').val(),
             q2 = $('input[name=optradio2]:checked').val(),
@@ -45,18 +41,19 @@ $(document).ready( function () {
             q6 = $('input[name=optradio6]:checked').val(),
             q7 = $('input[name=optradio7]:checked').val();
 
-        if (undefined) {
-            alert('Missing one field');
-            return;
-        }
-        else {
-            console.log(q1, q2, q3, q4, q5, q6, q7);
-        }
+        var takename = $("#user").val().trim();
+        var pic = $("#basic-url").val();
 
         var newdogs = {
+            name: takename,
+            picture: pic,
             scores: [q1, q2, q3, q4, q5, q6, q7]
         };
-        console.log(newdogs)
+
+        $.post("/api/friends", newdogs)
+            .done(function(data) {
+                console.log(newdogs);
+            });
     });
 });
 

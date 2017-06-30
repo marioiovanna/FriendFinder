@@ -43,4 +43,10 @@ text-shadow: 2px 2px #777;
     margin-top: 90px;
 }
 
+#start {
+    width: 200px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #eeeeee;
+}
 

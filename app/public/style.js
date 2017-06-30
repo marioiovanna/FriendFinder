@@ -3,33 +3,6 @@ $(document).ready( function () {
 
     console.log('Works');
 
-    $('#save').on('click', function (e) {
-        e.preventDefault();
-
-        var name = $('#user').val().trim();
-        var picture = $('#basic-url').val().trim();
-
-        console.log(name);
-        console.log(picture);
-
-        var newdogs = {
-            name: name,
-            picture: picture,
-            scores: {}
-        };
-
-        console.log(newdogs);
-
-        $.post('/api/friends', newdogs, function (data) {
-            if (data) {
-                alert('done')
-            }
-            else {
-                alert('no esta')
-            }
-        });
-    });
-
     $("#submit").click(function submitBtn() {
         event.preventDefault();
 
@@ -53,7 +26,9 @@ $(document).ready( function () {
         $.post("/api/friends", newdogs)
             .done(function(data) {
                 console.log(newdogs);
-            });
+            }).done(function(results) {
+            console.log(results)
+        })
     });
 });
 

@@ -27,8 +27,12 @@ $(document).ready( function () {
             .done(function(data) {
                 console.log(newdogs);
             }).done(function(results) {
+
+                $('#show').append(results[1].name);
+                $('#show').append('<img src="'+ results[1].picture + '" alt="Dog Match" style="width:570px;height:300px;">');
             console.log(results)
         })
+        $('#show').empty()
     });
 });
 

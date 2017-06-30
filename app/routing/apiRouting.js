@@ -9,12 +9,7 @@ module.exports = function (app) {
 
     app.post('/api/friends', function (req, res) {
         var newdogs = req.body;
-
-
-
-
         dogs.push(newdogs);
-
         res.json(dogs);
     });
 

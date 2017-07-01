@@ -36,7 +36,7 @@
 
 <main>
 
-    <form method="post" action="/friends">
+    <form method="post" action="/friends.js" id="MyForm">
 
         <div class="container">
             <div class="row">
@@ -50,13 +50,13 @@
                 <div class="col-md-6">
                     <div class="input-group">
                         <span class="input-group-addon" id="basic-addon3"><span class="glyphicon glyphicon-paperclip"></span> Picture Link</span>
-                        <input required type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="https://example.jpg">
+                        <input required type="url" class="form-control" id="basic-url" aria-describedby="basic-addon3" placeholder="https://example.jpg">
                     </div>
                 </div>
             </div>
         </div>
 
-            <br>
+        <br>
 
     <!-- QUESTIONS -->
     <div class="container">
@@ -67,7 +67,7 @@
                 <h2>I describe me as someone who exercises often</h2>
                 <p>Please choose ( 1 for weak, 5 for strong )</p>
                     <label class="radio-inline">
-                        <input type="radio" name="optradio1" value="1">Option 1
+                        <input type="radio" name="optradio1" value="1" required >Option 1
                     </label>
                     <label class="radio-inline">
                         <input type="radio" name="optradio1" value="2">Option 2
@@ -93,7 +93,7 @@
                 <h2>I prefer a quiet evening at home to a social outing with friends</h2>
                 <p>Please choose ( 1 for weak, 5 for strong )</p>
                     <label class="radio-inline">
-                        <input type="radio" name="optradio2" value="1">Option 1
+                        <input type="radio" name="optradio2" value="1" required >Option 1
                     </label>
                     <label class="radio-inline">
                         <input type="radio" name="optradio2" value="2">Option 2
@@ -119,7 +119,7 @@
                 <h2>I like to walk and run during day</h2>
                 <p>Please choose ( 1 for weak, 5 for strong )</p>
                     <label class="radio-inline">
-                        <input type="radio" name="optradio3" value="1">Option 1
+                        <input type="radio" name="optradio3" value="1" required >Option 1
                     </label>
                     <label class="radio-inline">
                         <input type="radio" name="optradio3" value="2">Option 2
@@ -145,7 +145,7 @@
                 <h2>Would like to have someone to swim all day</h2>
                 <p>Please choose ( 1 for weak, 5 for strong )</p>
                     <label class="radio-inline">
-                        <input type="radio" name="optradio4" value="1">Option 1
+                        <input type="radio" name="optradio4" value="1" required >Option 1
                     </label>
                     <label class="radio-inline">
                         <input type="radio" name="optradio4" value="2">Option 2
@@ -171,7 +171,7 @@
                 <h2>I can eat everything, and have 4 meals a day</h2>
                 <p>Please choose ( 1 for weak, 5 for strong )</p>
                     <label class="radio-inline">
-                        <input type="radio" name="optradio5" value="1">Option 1
+                        <input type="radio" name="optradio5" value="1" required >Option 1
                     </label>
                     <label class="radio-inline">
                         <input type="radio" name="optradio5" value="2">Option 2
@@ -197,7 +197,7 @@
                 <h2>I'm looking for someone to be with me all day</h2>
                 <p>Please choose ( 1 for weak, 5 for strong )</p>
                     <label class="radio-inline">
-                        <input type="radio" name="optradio6" value="1">Option 1
+                        <input type="radio" name="optradio6" value="1" required >Option 1
                     </label>
                     <label class="radio-inline">
                         <input type="radio" name="optradio6" value="2">Option 2
@@ -224,7 +224,7 @@
                 <p>Please choose ( 1 for weak, 5 for strong )</p>
 
                     <label class="radio-inline">
-                        <input type="radio" name="optradio7" value="1">Option 1
+                        <input type="radio" name="optradio7" value="1" required>Option 1
                     </label>
                     <label class="radio-inline">
                         <input type="radio" name="optradio7" value="2">Option 2
@@ -247,9 +247,11 @@
         <div class="row">
             <div class="col-md-5">
             </div>
+
             <div class="col-md-4">
-                <button id="submit" type="submit" class="btn btn-success btn2" data-toggle="modal" data-target="#myModal">SUBMIT</button>
+                <input type="submit" class="btn btn-success btn2">
             </div>
+
             <div class="col-md-3">
             </div>
         </div>
@@ -258,14 +260,12 @@
     </form>
     <br>
 
-    <!-- MODAL -->
-    <div class="modal fade" id="myModal" role="dialog">
+    <div id="myModal" role="dialog">
         <div class="modal-dialog">
-
-            <!-- Modal content-->
             <div class="modal-content text-center">
                 <div class="modal-header">
                     <h4 class="modal-title">YOUR PERFECT MATCH</h4>
+                   <a href="home.html"><button type="button" class="btn btn-default">BACK HOME PAGE</button></a>
                 </div>
                 <div class="modal-body" id="show">
                 </div>

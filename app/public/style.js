@@ -1,10 +1,17 @@
 
 $(document).ready( function () {
 
+    $('#myModal').hide();
+
     console.log('Works');
 
-    $("#submit").click(function submitBtn() {
-        event.preventDefault();
+    // $("#submit").click(function submitBtn() {
+    //     event.preventDefault();
+    $("form").on('submit', function submitBtn(e) {
+            e.preventDefault();
+
+        $('form').hide();
+        $('#myModal').show();
 
         var q1 = $('input[name=optradio1]:checked').val(),
             q2 = $('input[name=optradio2]:checked').val(),
@@ -23,15 +30,15 @@ $(document).ready( function () {
             scores: [q1, q2, q3, q4, q5, q6, q7]
         };
 
-        $.post("/api/friends", newdogs)
+        $.post("/friends", newdogs)
             .done(function(data) {
                 console.log(newdogs);
             }).done(function(results) {
 
-                $('#show').append(results[1].name);
-                $('#show').append('<img src="'+ results[1].picture + '" alt="Dog Match" style="width:570px;height:300px;">');
+                $('#show').append(results[2].name);
+                $('#show').append('<img src="'+ results[2].picture + '" alt="Dog Match" style="width:570px;height:300px;">');
             console.log(results)
-        })
+        });
         $('#show').empty()
     });
 });

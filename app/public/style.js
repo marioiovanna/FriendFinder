@@ -32,14 +32,22 @@ $(document).ready( function () {
 
         $.post("/friends", newdogs)
             .done(function(data) {
-                console.log(newdogs);
-            }).done(function(results) {
+                console.log(data);
+                var resultObject = JSON.parse(data);
+            // }).done(function(results) {
 
-                $('#show').append(results[2].name);
-                $('#show').append('<img src="'+ results[2].picture + '" alt="Dog Match" style="width:570px;height:300px;">');
-            console.log(results)
+                $('#show').append(resultObject.name);
+                $('#show').append('<img src="'+ resultObject.picture + '" alt="Dog Match" style="width:570px;height:300px;">');
         });
-        $('#show').empty()
+        // $('#show').empty()
     });
 });
-
+//
+//
+// $.post('/friends', alldogs)
+//     .done(function (data) {
+//         // do something with info
+//     })
+//     .fail(function (error) {
+//         // handle the error
+//     });

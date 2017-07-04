@@ -1,4 +1,6 @@
 
+
+var path = require('path');
 var dogs = require("../data/friends.js");
 
 module.exports = function (app) {
@@ -22,10 +24,10 @@ module.exports = function (app) {
             var sum = 0;
             var closestNumber = 0;
 
-            for (var i = 0; i < friends.length; i++) {
+            for (var i = 0; i < dogs.length; i++) {
 
                 for (var j = 0; j < scoreArray.length; j++) {
-                    sum += (Math.abs(scoreArray[j] - friends[i].scores[j]));
+                    sum += (Math.abs(scoreArray[j] - dogs[i].scores[j]));
                 }
                 sumArray.push(sum);
                 sum = 0;
@@ -37,13 +39,16 @@ module.exports = function (app) {
                 }
             }
 
-            var match = friends[closestNumber];
+            var match = dogs[closestNumber];
 
 
-            friends.push(req.body);
+            dogs.push(req.body);
 
-            var string = JSON.stringify(match)
+            var string = JSON.stringify(match);
             res.end(string);
+            console.log(string)
+
+
 
             // dogs.push(newdogs);
             // res.json(dogs);

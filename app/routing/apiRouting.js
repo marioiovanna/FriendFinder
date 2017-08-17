@@ -4,20 +4,21 @@ var path = require('path');
 var dogs = require("../data/friends.js");
 
 module.exports = function (app) {
-
     app.get('/friends', function (req, res) {
         return res.json(dogs);
     });
 
     app.post('/friends', function (req, res) {
 
-        // var newdogs = req.body;
-
         var closest = 30;
         var userName = req.body.name;
         var userPhoto = req.body.picture;
         var scoreArray = req.body.scores;
         matchUp();
+
+        var newdog = {name: userName, picture: userPhoto, score: scoreArray};
+
+        dogs.push(newdog)
 
         function matchUp() {
             var sumArray = [];
@@ -41,17 +42,10 @@ module.exports = function (app) {
 
             var match = dogs[closestNumber];
 
-
             dogs.push(req.body);
 
             var string = JSON.stringify(match);
             res.end(string);
-            console.log(string)
-
-
-
-            // dogs.push(newdogs);
-            // res.json(dogs);
         }
     });
 

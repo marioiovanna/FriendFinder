@@ -3,10 +3,6 @@ $(document).ready( function () {
 
     $('#myModal').hide();
 
-    console.log('Works');
-
-    // $("#submit").click(function submitBtn() {
-    //     event.preventDefault();
     $("form").on('submit', function submitBtn(e) {
             e.preventDefault();
 
@@ -34,20 +30,9 @@ $(document).ready( function () {
             .done(function(data) {
                 console.log(data);
                 var resultObject = JSON.parse(data);
-            // }).done(function(results) {
 
                 $('#show').append(resultObject.name);
                 $('#show').append('<img src="'+ resultObject.picture + '" alt="Dog Match" style="width:570px;height:300px;">');
         });
-        // $('#show').empty()
-    });
+   });
 });
-//
-//
-// $.post('/friends', alldogs)
-//     .done(function (data) {
-//         // do something with info
-//     })
-//     .fail(function (error) {
-//         // handle the error
-//     });

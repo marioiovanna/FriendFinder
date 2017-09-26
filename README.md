@@ -14,4 +14,4 @@ The result will be display and the end of the Survey.
 ![alt text](https://github.com/marioiovanna/FriendFinder/blob/master/app/public/app-pic/result.PNG)
 
 #
-Link:  https://fathomless-sands-65102.herokuapp.com/survey.html
+Link:  https://fathomless-sands-65102.herokuapp.com/index.html
